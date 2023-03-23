@@ -78,7 +78,6 @@ export const News = ({
   };
 
   let id = Number(idUser);
-  console.log();
 
   return (
     <ul className="news-list">
