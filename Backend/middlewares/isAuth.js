@@ -3,10 +3,8 @@
 */
 
 const getDB = require('../db/getDB');
-const { generateError, validateSchema } = require('../helpers');
+const { generateError } = require('../helpers');
 const jwt = require('jsonwebtoken');
-const authSchema = require('../schemas/AuthSchema');
-const { type } = require('../schemas/AuthSchema');
 require('dotenv').config(); // dependencia necesaria para leer la variable de entorno SECRET
 
 const isAuth = async (req, res, next) => {

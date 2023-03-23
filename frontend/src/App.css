@@ -101,6 +101,10 @@ p.loading {
   padding: 2rem;
 }
 
+p.Message {
+  color: goldenrod;
+}
+
 form {
   padding: 1rem;
   margin-bottom: 2rem;

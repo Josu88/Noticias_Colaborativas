@@ -31,6 +31,7 @@ const editUserPass = require('./controllers/users/editPassUser');
 const editUser = require('./controllers/users/editUserData');
 const deleteUser = require('./controllers/users/deleteUser');
 const userName = require('./controllers/users/userName');
+const getIdUser = require('./controllers/users/getIdUser');
 
 /*   ### Controladores de News ###  */
 
@@ -75,6 +76,9 @@ app.delete('/user', isUser, deleteUser);
 
 // Mostrar nombre de usuario
 app.get('/user/username', isUser, userName);
+
+// Mostrar id de usuario
+app.get('/user/id', isUser, getIdUser);
 
 /*   ### Endpoints News ###  */
 

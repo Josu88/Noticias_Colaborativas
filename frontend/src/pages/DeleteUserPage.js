@@ -4,7 +4,7 @@ import { deleteUserService } from "../services";
 import { useNavigate } from "react-router-dom";
 
 export const DeleteUserPage = () => {
-  const { token } = useContext(AuthContext);
+  const { token, setToken, setUser } = useContext(AuthContext);
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [message, setMessage] = useState("");
@@ -16,9 +16,10 @@ export const DeleteUserPage = () => {
     try {
       await deleteUserService({ password, token });
       setMessage("Se ha Borrado correctamente el usuario");
+      setToken("");
+      setUser("");
       localStorage.clear();
       navigate("/");
-      window.location.reload(false);
     } catch (error) {
       setError(error.message);
       setMessage("");
@@ -43,7 +44,7 @@ export const DeleteUserPage = () => {
 
         <button className="Done">Borrar</button>
         {error ? <p>{error}</p> : null}
-        <p>{message}</p>
+        <p className="Message">{message}</p>
       </form>
     </section>
   );

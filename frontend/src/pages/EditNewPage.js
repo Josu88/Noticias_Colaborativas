@@ -88,7 +88,7 @@ export const EditNewPage = () => {
 
         <button className="Done">Edit</button>
         {error ? <p>{error}</p> : null}
-        <p>{message}</p>
+        <p className="Message">{message}</p>
       </form>
     </section>
   );

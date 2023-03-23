@@ -62,7 +62,7 @@ export const RegisterPage = () => {
 
         <button className="Done">Register</button>
         {error ? <p>{error}</p> : null}
-        <p>{message}</p>
+        <p className="Message">{message}</p>
       </form>
     </section>
   );

@@ -1,11 +1,15 @@
 import { useContext, useState } from "react";
-import { listUserNameService, logInUserService } from "../services";
+import {
+  listIdUserService,
+  listUserNameService,
+  logInUserService,
+} from "../services";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 
 export const LoginPage = () => {
   const navigate = useNavigate();
-  const { setToken, setUser } = useContext(AuthContext);
+  const { setToken, setUser, setIdUser } = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -17,10 +21,13 @@ export const LoginPage = () => {
     try {
       const loginToken = await logInUserService({ email, password });
       const { userName } = await listUserNameService(loginToken);
+      const { iduser } = await listIdUserService(loginToken);
 
       setToken(loginToken);
       setUser(userName[0].username);
+      setIdUser(iduser[0].id);
       localStorage.setItem("user", userName[0].username);
+      localStorage.setItem("iduser", iduser[0].id);
 
       setMessage("Te has logeado correctamente");
 
@@ -60,7 +67,7 @@ export const LoginPage = () => {
 
         <button className="Done">Login</button>
         {error ? <p>{error}</p> : null}
-        <p>{message}</p>
+        <p className="Menssage">{message}</p>
       </form>
     </section>
   );

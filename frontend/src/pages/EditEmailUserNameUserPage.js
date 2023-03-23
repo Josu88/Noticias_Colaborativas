@@ -43,9 +43,9 @@ export const EditEmailUserNameUserPage = () => {
         <fieldset>
           <label htmlFor="newUsername">newUsername</label>
           <input
-            type="password"
-            name="pass"
-            id="pass"
+            type="text"
+            name="username"
+            id="username"
             value={newUsername}
             required
             onChange={(e) => setNewUsername(e.target.value)}
@@ -54,7 +54,7 @@ export const EditEmailUserNameUserPage = () => {
 
         <button className="Done">Edit</button>
         {error ? <p>{error}</p> : null}
-        <p>{message}</p>
+        <p className="Message">{message}</p>
       </form>
     </section>
   );

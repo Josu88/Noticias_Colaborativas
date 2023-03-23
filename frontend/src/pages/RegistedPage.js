@@ -19,7 +19,14 @@ export const RegistedPage = () => {
   } = useNews();
 
   const navigate = useNavigate();
-  const { token, user, setToken } = useContext(AuthContext);
+  const { token, user, setToken, setUser, setIdUser } = useContext(AuthContext);
+
+  const LogoutButton = () => {
+    setToken("");
+    setUser("");
+    setIdUser("");
+    localStorage.clear();
+  };
 
   if (!token) {
     navigate("/");
@@ -29,7 +36,12 @@ export const RegistedPage = () => {
       <h2>{`bienvenid@ ${user}`}</h2>
       <form className="RegisterSec">
         <fieldset>
-          <button className="Done" onClick={() => setToken("")}>
+          <button
+            className="Done"
+            onClick={() => {
+              LogoutButton();
+            }}
+          >
             Logout
           </button>
         </fieldset>

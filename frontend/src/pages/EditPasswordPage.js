@@ -78,7 +78,7 @@ export const EditPasswordPage = () => {
           cambiar contraseña
         </button>
         {error ? <p>{error}</p> : null}
-        <p>{message}</p>
+        <p className="Message">{message}</p>
       </form>
     </section>
   );
