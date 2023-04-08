@@ -57,6 +57,11 @@ const canEditNews = require('./middlewares/canEditNews');
 //Middleware por el qu pasa todas las peticiones
 app.use(isAuth);
 
+/*   ### Endpoint de pagina de Inicio ###  */
+app.get('/', (req, res) => {
+    res.send('Página de Inicio de la Api o Servidor');
+});
+
 /*   ### Endpoints Usuarios ###  */
 
 // Registro de usuario

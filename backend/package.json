@@ -1,9 +1,10 @@
 {
-    "name": "NoticasCol-Backend",
+    "name": "noticascol-backend",
     "version": "1.0.0",
     "description": "Es api de noticias tipo Reddit.",
     "main": "server.js",
     "scripts": {
+        "start": "node server.js",
         "dev": "nodemon server.js",
         "db": "node ./db/initDB.js"
     },
