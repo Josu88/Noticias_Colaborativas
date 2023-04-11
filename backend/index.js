@@ -46,7 +46,7 @@ const editNews = require('./controllers/News/editNews');
 const deleteNews = require('./controllers/News/deleteNews');
 
 // Importamos las variables de entorno que hemos creado para la conexión
-const { Port } = process.env;
+const { PORT, MYSQL_HOST } = process.env;
 
 /*   ### Middlewares ###  */
 
@@ -59,7 +59,7 @@ app.use(isAuth);
 
 /*   ### Endpoint de pagina de Inicio ###  */
 app.get('/', (req, res) => {
-    res.send('Página de Inicio de la Api o Servidor');
+    res.send(`Server listening at http://${MYSQL_HOST}:${PORT}`);
 });
 
 /*   ### Endpoints Usuarios ###  */
@@ -137,6 +137,6 @@ app.use((req, res) => {
 });
 
 // Ponemos el servidor a la escucha
-app.listen(Port, () => {
-    console.log(`Server listening at http://localhost:${Port}`);
+app.listen(PORT, () => {
+    console.log(`Server listening at http://${MYSQL_HOST}:${PORT}`);
 });

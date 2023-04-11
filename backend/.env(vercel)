@@ -1,0 +1,7 @@
+MYSQL_HOST=mysql-josu88.alwaysdata.net
+MYSQL_USER=josu88_free
+MYSQL_PASS=12345_free
+MYSQL_DB=josu88_noticias
+MYSQL_PORT=3306
+SECRET=secreto1234
+PORT=4000

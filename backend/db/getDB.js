@@ -6,7 +6,8 @@ const mysql = require('mysql2/promise');
 require('dotenv').config();
 
 // Importamos las variables de entorno que hemos creado para la conexión
-const { MYSQL_HOST, MYSQL_USER, MYSQL_PASS, MYSQL_DB } = process.env;
+const { MYSQL_HOST, MYSQL_USER, MYSQL_PASS, MYSQL_DB, MYSQL_PORT } =
+    process.env;
 
 const getDB = async () => {
     // Declaramos un pool de conexiones
@@ -21,6 +22,7 @@ const getDB = async () => {
                 user: MYSQL_USER,
                 password: MYSQL_PASS,
                 database: MYSQL_DB,
+                port: MYSQL_PORT,
                 timezone: 'Z',
             });
             // Ejecutamos el método getConnection para devolver una conexion libre
