@@ -32,7 +32,7 @@
 
   # Base de Datos
 
-  - La estructura de la base de datos el la siguiente:
+  - La estructura de la base de datos es la siguiente:
 
   ## Nombre: noticias
 
